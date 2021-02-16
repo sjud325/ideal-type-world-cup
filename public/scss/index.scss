@@ -1,0 +1,219 @@
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+div.header {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #242424;
+
+	p {
+		font-size: 20px;
+		font-family: 'Noto Sans KR';
+		font-weight: 700;
+		color: #ffffff;
+		letter-spacing: 2px;
+		padding-left: 2px;
+		box-sizing: border-box;
+	}
+}
+
+div.content {
+	width: 100%;
+	height: calc(100% - 60px);
+
+	div.wrap {
+		width: 100%;
+		height: calc(100% - 60px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		div#gender {
+			height: 60px;
+			display: flex;
+			align-items: center;
+			font-size: 32px;
+			font-family: 'Noto Sans KR';
+			font-weight: 700;
+			color: #333333;
+			margin-bottom: 64px;
+			cursor: pointer;
+
+			&::after {
+				display: inline-block;
+				content: '\00a0\00a0\00a0\00a0';
+				background-size: 32px 32px;
+				background-color: transparent;
+				background-image: url('../img/change.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				margin-left: 8px;
+				transition: all 0.5s ease-in-out;
+			}
+
+			&:hover {
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+
+			div.select {
+				position: relative;
+				width: 30px;
+				height: 48px;
+				overflow: hidden;
+
+				div.shadow {
+					position: absolute;
+					top: calc(50% - 30px);
+					left: calc(50% - 30px);
+					width: 60px;
+					height: 60px;
+					box-shadow: inset 0 4px 8px 6px #ffffff, inset 0 -4px 8px 6px #ffffff;
+					z-index: 1;
+				}
+
+				p.option {
+					position: absolute;
+					left: 0px;
+					width: 100%;
+					height: 100%;
+					line-height: 44px;
+
+					&#gender0 {
+						top: -48px;
+					}
+
+					&#gender1 {
+						top: 48px;
+					}
+				}
+			}
+
+			p.remainder {
+				padding-bottom: 4px;
+				box-sizing: border-box;
+			}
+		}
+
+		div.buttons {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 32px;
+			margin-bottom: 48px;
+
+			button {
+				width: 80px;
+				height: 40px;
+				font-size: 18px;
+				font-family: 'Noto Sans KR';
+				font-weight: 700;
+				color: #ffffff;
+				background-color: #242424;
+				border-radius: 4px;
+				cursor: pointer;
+
+				&:disabled {
+					opacity: 0.3;
+					cursor: default;
+				}
+			}
+		}
+
+		div.guide {
+			margin-bottom: 24px;
+
+			p {
+				font-size: 14px;
+				font-family: 'Noto Sans KR';
+				font-weight: 300;
+				color: #666666;
+				text-align: center;
+				line-height: 24px;
+				word-break: keep-all;
+			}
+		}
+
+		div.divider {
+			width: 360px;
+			height: 1px;
+			background-color: #cccccc;
+			margin-bottom: 48px;
+		}
+
+		button#manage {
+			width: 128px;
+			height: 48px;
+			font-size: 16px;
+			font-family: 'Noto Sans KR';
+			font-weight: 500;
+			color: #242424;
+			background-color: #ffffff;
+			border: 1px solid #242424;
+			border-radius: 4px;
+			cursor: pointer;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	div.footer {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			font-size: calc(10px + 0.2vw);
+			font-family: 'Noto Sans KR';
+			font-weight: 300;
+			color: #666666;
+		}
+	}
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../font/noto-sans-kr-v13-korean-300.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-300.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../font/noto-sans-kr-v13-korean-500.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-500.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../font/noto-sans-kr-v13-korean-700.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-700.woff') format('woff');
+}

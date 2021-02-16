@@ -1,0 +1,178 @@
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+div.header {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	background-color: #242424;
+
+	/* hide all elements in this resolution */
+	@media (min-width: 721px) and (max-width: 1279px) {
+		p.round {
+			display: none;
+		}
+
+		div.name {
+			display: none;
+		}
+	}
+}
+
+div.content {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 60px);
+	display: flex;
+	overflow: hidden;
+
+	/* hide all elements in this resolution */
+	@media (min-width: 721px) and (max-width: 1279px) {
+		div.versus {
+			display: none;
+		}
+
+		div.refresh-back {
+			display: none;
+		}
+
+		div.refresh {
+			display: none;
+		}
+
+		div.warning {
+			width: 100%;
+			margin: auto 0;
+
+			p {
+				font-size: 16px;
+				font-family: 'Noto Sans KR';
+				font-weight: 300;
+				color: #242424;
+				text-align: center;
+				word-break: keep-all;
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	div.loading {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #e24c61;
+		z-index: 3;
+		transition: all ease-in-out 400ms 1000ms;
+
+		&.idle {
+			transform: translateX(-100vw);
+		}
+
+		div {
+			position: absolute;
+
+			&.transition {
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+
+				&:nth-child(1) {
+					background-color: #e87181;
+					transition: all ease-in-out 400ms 400ms;
+				}
+
+				&:nth-child(2) {
+					background-color: #f1a9b3;
+					transition: all ease-in-out 400ms 200ms;
+				}
+
+				&:nth-child(3) {
+					background-color: #ffffff;
+					transition: all ease-in-out 400ms;
+				}
+			}
+
+			&#twinkle {
+				top: calc(50% - 120px);
+				left: calc(50% - 120px);
+				width: 240px;
+				height: 240px;
+				transition: all ease-in-out 400ms;
+			}
+		}
+	}
+
+	div.play {
+		transform: translateX(100vw);
+	}
+}
+
+div.modal {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	box-sizing: border-box;
+	z-index: 3;
+	opacity: 0;
+	transition: all ease-in-out 200ms;
+
+	&.show {
+		opacity: 1;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../font/noto-sans-kr-v13-korean-300.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-300.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../font/noto-sans-kr-v13-korean-500.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-500.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../font/noto-sans-kr-v13-korean-700.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-700.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'SD Samliphopang Outline';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../font/SDSamliphopangcheOutline.woff2') format('woff2'),
+		url('../font/SDSamliphopangcheOutline.woff') format('woff');
+}

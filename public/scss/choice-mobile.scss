@@ -1,0 +1,156 @@
+@media (max-width: 720px) {
+	div.header {
+		p.round {
+			position: absolute;
+			top: calc(50% - 12px);
+			left: calc(50% - 32px);
+			width: 64px;
+			height: 26px;
+			font-size: 20px;
+			font-family: 'SD Samliphopang Outline';
+			font-weight: normal;
+			color: #ffffff;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		div.name {
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			p {
+				font-size: 16px;
+				font-family: 'Noto Sans KR';
+				font-weight: 700;
+				color: #ffffff;
+				letter-spacing: 2px;
+				word-break: keep-all;
+				text-align: center;
+				box-sizing: border-box;
+				opacity: 0;
+				transition: all ease-in-out 500ms;
+
+				&.show {
+					opacity: 1;
+				}
+
+				&#name1 {
+					padding-left: 2px;
+					padding-right: 48px;
+				}
+
+				&#name2 {
+					padding-left: 50px;
+					padding-right: 0px;
+				}
+			}
+
+			div {
+				width: 40px;
+				height: 100%;
+				opacity: 0;
+				transition: all ease-in-out 200ms;
+			}
+		}
+	}
+
+	div.content {
+		div.versus {
+			position: relative;
+			width: 50%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+			grid-gap: 2px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			box-sizing: border-box;
+
+			&:nth-child(1) {
+				padding-left: 2px;
+				padding-right: 1px;
+			}
+
+			&:nth-child(2) {
+				padding-left: 1px;
+				padding-right: 2px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center 20%;
+				cursor: pointer;
+			}
+
+			button.heart {
+				position: absolute;
+				top: calc(50% - 32px);
+				display: block;
+				width: 64px;
+				height: 64px;
+				background-size: 64px 64px;
+				background-color: transparent;
+				background-image: url('../img/favorite.svg');
+				background-repeat: no-repeat;
+				z-index: 2;
+				opacity: 0.9;
+				cursor: pointer;
+				transition: all ease-in-out 500ms;
+
+				&#heart1 {
+					left: calc(50% - 40px);
+				}
+
+				&#heart2 {
+					right: calc(50% - 40px);
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&.selected {
+					transform: scale(50);
+					opacity: 0;
+				}
+			}
+		}
+
+		div.refresh-back {
+			position: absolute;
+			top: calc(50% - 20px);
+			left: calc(50% - 20px);
+			width: 40px;
+			height: 40px;
+			background-color: #ffffff;
+			border-radius: 20px;
+			z-index: 1;
+			opacity: 0.9;
+			transition: all ease-in-out 300ms;
+		}
+
+		div.refresh {
+			position: absolute;
+			top: calc(50% - 48px);
+			left: calc(50% - 48px);
+			width: 96px;
+			height: 96px;
+			z-index: 1;
+			cursor: pointer;
+		}
+
+		div.warning {
+			display: none;
+		}
+	}
+
+	div.modal {
+		padding: 8px;
+	}
+}

@@ -1,0 +1,86 @@
+@media (min-width: 1280px) {
+	div.content {
+		div.wrap {
+			div.anim-set {
+				position: absolute;
+				top: 4vh;
+				left: 0px;
+				width: 100%;
+				height: 400px;
+				display: flex;
+				justify-content: space-between;
+				padding-left: 4vw;
+				padding-right: 4vw;
+				box-sizing: border-box;
+
+				div.anim {
+					width: 400px;
+					height: 400px;
+
+					&#fireworks1 {
+						transform: rotate3d(0, 1, 0, 180deg);
+					}
+				}
+			}
+
+			div.result {
+				p.name {
+					letter-spacing: 8px;
+				}
+
+				p.guide {
+					letter-spacing: 4px;
+				}
+
+				p.total {
+					span {
+						margin-left: 8px;
+						margin-right: 4px;
+					}
+				}
+			}
+
+			div#tournament {
+				width: 100%;
+				height: 54vh;
+				min-height: 360px;
+
+				g.node rect {
+					fill: #ffffff;
+					stroke: #e51a48;
+					stroke-width: 2px;
+
+					&.winner {
+						fill: #e51a48;
+					}
+				}
+
+				g.node text {
+					font-size: 13px;
+					font-family: 'RecipeKorea';
+					font-weight: normal;
+					fill: #666666;
+
+					&.winner {
+						fill: #ffffff;
+					}
+				}
+
+				g.node path {
+					fill: none;
+					stroke: #666666;
+					stroke-width: 1px;
+					opacity: 0.4;
+				}
+			}
+
+			p.desc {
+				font-size: 16px;
+			}
+
+			button#again {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>이상형 월드컵</title>
+		<link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=" />
+		<link rel="stylesheet" type="text/css" href="css/member.css" />
+		<script>
+			/* jshint ignore:start */
+			const gender = <%- JSON.stringify(gender) %>;
+			const results = <%- JSON.stringify(results) %>;
+			/* jshint ignore:end */
+		</script>
+		<script defer src="js/member.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<p></p>
+		</div>
+		<div class="content">
+			<div class="members">
+				<p id="count"></p>
+				<p class="guide">변경사항이 여기 표시됩니다.</p>
+				<div class="wrap" id="append">
+					<p>추가하기</p>
+					<div class="icon append"></div>
+				</div>
+			</div>
+			<div class="footer">
+				<p>Copyright ⓒ 2021 Acoz. All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>

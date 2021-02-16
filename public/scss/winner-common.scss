@@ -1,0 +1,153 @@
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+div.header {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #242424;
+
+	p {
+		font-size: 20px;
+		font-family: 'Noto Sans KR';
+		font-weight: 700;
+		color: #ffffff;
+		letter-spacing: 2px;
+		padding-left: 2px;
+		box-sizing: border-box;
+	}
+}
+
+div.content {
+	width: 100%;
+	height: calc(100% - 60px);
+
+	div.wrap {
+		position: relative;
+		width: 100%;
+		min-height: calc(100% - 60px);
+		padding: 20px;
+		box-sizing: border-box;
+
+		div.result {
+			width: 100%;
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			p.name {
+				width: 100%;
+				font-size: 36px;
+				font-family: 'RecipeKorea';
+				font-weight: normal;
+				color: #242424;
+				text-align: center;
+				padding-left: 8px;
+				box-sizing: border-box;
+				margin-bottom: 16px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			p.guide {
+				width: 100%;
+				font-size: 24px;
+				font-family: 'RecipeKorea';
+				font-weight: normal;
+				color: #666666;
+				text-align: center;
+				padding-left: 4px;
+				box-sizing: border-box;
+				margin-bottom: 40px;
+			}
+
+			p.total {
+				width: 100%;
+				font-size: 20px;
+				font-family: 'Noto Sans KR';
+				font-weight: 300;
+				color: #242424;
+				text-align: center;
+				word-break: keep-all;
+
+				span {
+					font-size: 24px;
+					font-family: 'RecipeKorea';
+					font-weight: normal;
+					color: #e51a48;
+					vertical-align: top;
+				}
+			}
+		}
+
+		p.desc {
+			font-family: 'Noto Sans KR';
+			font-weight: 300;
+			color: #666666;
+			text-align: center;
+			margin-top: 12px;
+		}
+	}
+
+	div.footer {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			font-size: calc(10px + 0.2vw);
+			font-family: 'Noto Sans KR';
+			font-weight: 300;
+			color: #666666;
+		}
+	}
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../font/noto-sans-kr-v13-korean-300.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-300.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../font/noto-sans-kr-v13-korean-500.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-500.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../font/noto-sans-kr-v13-korean-700.woff2') format('woff2'),
+		url('../font/noto-sans-kr-v13-korean-700.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Recipekorea';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../font/Recipekorea.woff2') format('woff2'), url('../font/Recipekorea.woff') format('woff');
+}

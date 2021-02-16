@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>이상형 월드컵</title>
+		<link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=" />
+		<link rel="stylesheet" type="text/css" href="css/winner.css" />
+		<script>
+			/* jshint ignore:start */
+			const member = <%- JSON.stringify(member) %>;
+			let results = <%- JSON.stringify(results) %>;
+			/* jshint ignore:end */
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie_light.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
+		<script defer src="js/winner.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<p>구글 검색 이상형 월드컵</p>
+		</div>
+		<div class="content">
+			<div class="wrap">
+				<div class="anim-set">
+					<div class="anim" id="fireworks1"></div>
+					<div class="anim" id="fireworks2"></div>
+				</div>
+				<div class="result">
+					<p class="name"></p>
+					<p class="guide"></p>
+					<p class="total"></p>
+				</div>
+				<div id="tournament"></div>
+				<p class="desc"></p>
+				<button id="again">다시하기</button>
+			</div>
+			<div class="footer">
+				<p>Copyright ⓒ 2021 Acoz. All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>

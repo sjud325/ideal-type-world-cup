@@ -1,0 +1,152 @@
+@media (min-width: 1280px) {
+	div.header {
+		p.round {
+			position: absolute;
+			top: calc(50% - 16px);
+			left: calc(50% - 48px);
+			width: 96px;
+			height: 36px;
+			font-size: 28px;
+			font-family: 'SD Samliphopang Outline';
+			font-weight: normal;
+			color: #ffffff;
+			text-align: center;
+			letter-spacing: 2px;
+			cursor: pointer;
+		}
+
+		div.name {
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			p {
+				font-size: 24px;
+				font-family: 'Noto Sans KR';
+				font-weight: 700;
+				color: #ffffff;
+				letter-spacing: 4px;
+				box-sizing: border-box;
+				opacity: 0;
+				transition: all ease-in-out 500ms;
+
+				&.show {
+					opacity: 1;
+				}
+
+				&#name1 {
+					padding-left: 4px;
+					padding-right: 60px;
+				}
+
+				&#name2 {
+					padding-left: 64px;
+					padding-right: 0px;
+				}
+			}
+
+			div {
+				width: 60px;
+				height: 100%;
+				opacity: 0;
+				transition: all ease-in-out 200ms;
+			}
+		}
+	}
+
+	div.content {
+		div.versus {
+			position: relative;
+			flex: 1;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-gap: 2px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			box-sizing: border-box;
+
+			&:nth-child(1) {
+				padding-left: 2px;
+				padding-right: 1px;
+			}
+
+			&:nth-child(2) {
+				padding-left: 1px;
+				padding-right: 2px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center 10%;
+				cursor: pointer;
+			}
+
+			button.heart {
+				position: absolute;
+				top: calc(50% - 60px);
+				left: calc(50% - 60px);
+				display: block;
+				width: 120px;
+				height: 120px;
+				background-size: 120px 120px;
+				background-color: transparent;
+				background-image: url('../img/favorite.svg');
+				background-repeat: no-repeat;
+				z-index: 2;
+				opacity: 0.9;
+				cursor: pointer;
+				transition: all ease-in-out 500ms;
+
+				&:focus {
+					outline: none;
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+
+				&.selected {
+					transform: scale(50);
+					opacity: 0;
+				}
+			}
+		}
+
+		div.refresh-back {
+			position: absolute;
+			top: calc(50% - 32px);
+			left: calc(50% - 32px);
+			width: 64px;
+			height: 64px;
+			background-color: #ffffff;
+			border-radius: 32px;
+			z-index: 1;
+			opacity: 0.9;
+			transition: all ease-in-out 300ms;
+		}
+
+		div.refresh {
+			position: absolute;
+			top: calc(50% - 80px);
+			left: calc(50% - 80px);
+			width: 160px;
+			height: 160px;
+			z-index: 1;
+			cursor: pointer;
+		}
+
+		div.warning {
+			display: none;
+		}
+	}
+
+	div.modal {
+		padding: 16px;
+	}
+}
