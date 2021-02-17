@@ -62,5 +62,3 @@ https://sjud325.asuscomm.com/ideal-type-world-cup/
   ![Mobile Choice 2](/capture7.gif)
   
   ![Mobile Winner](/capture8.gif)
-
----------------------------------------
