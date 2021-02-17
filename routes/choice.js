@@ -55,7 +55,7 @@ router.get('/', async (req, res) => {
 router.get('/match', async (req, res) => {
 	try {
 		if (req.session.object === undefined) {
-			return res.redirect(301, '/ideal-type-world-cup/');
+			return res.status(403).json({ message: 'empty session' });
 		}
 		const {
 			round,

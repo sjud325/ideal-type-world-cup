@@ -50,10 +50,10 @@ class Choice {
 
 		// handle click event of heart buttons to choose one
 		this.$heart1.addEventListener('click', (e) =>
-			this.handleHeartClick(this.$heart1, this.res1._id, this.$star1, this.anim.star1)
+			this.handleHeartClick(e.target, this.res1._id, this.$star1, this.anim.star1)
 		);
 		this.$heart2.addEventListener('click', (e) =>
-			this.handleHeartClick(this.$heart2, this.res2._id, this.$star2, this.anim.star2)
+			this.handleHeartClick(e.target, this.res2._id, this.$star2, this.anim.star2)
 		);
 
 		// handle mouse in and out event of refresh button
@@ -64,6 +64,10 @@ class Choice {
 
 		// handle click event of refresh button to refresh images
 		this.$refresh.addEventListener('click', async (e) => {
+			if (this.progressing) {
+				return;
+			}
+			this.progressing = true;
 			this.loadedImages = 0;
 			this.isFullRefresh = false;
 			this.anim.loading.play();
@@ -73,6 +77,7 @@ class Choice {
 			await this.animate(this.$loading, 'idle'); // wait for transition
 			this.res1.indices = this.setRandomImages(this.res1.images, this.$img1, this.timeout['1']);
 			this.res2.indices = this.setRandomImages(this.res2.images, this.$img2, this.timeout['2']);
+			this.progressing = false;
 		});
 
 		// handle click event of modal to hide
@@ -135,6 +140,9 @@ class Choice {
 			this.res2.indices = this.setRandomImages(this.res2.images, this.$img2, this.timeout['2']);
 			this.$round.innerText = json.round;
 		} else {
+			if (response.status === 403) {
+				return (window.location = '.');
+			}
 			alert(`${response.status} 오류가 발생했습니다.\n관리자에게 문의해주세요.`);
 		}
 	}
@@ -180,6 +188,10 @@ class Choice {
 	}
 
 	async handleHeartClick(target, _id, container, animation) {
+		if (this.progressing) {
+			return;
+		}
+		this.progressing = true;
 		animation.play(); // play the star animation
 		container.style.opacity = 1; // show the star animation container
 		await this.animate(target, 'selected'); // wait for transition
@@ -215,6 +227,7 @@ class Choice {
 		} else {
 			alert(`${response.status} 오류가 발생했습니다.\n관리자에게 문의해주세요.`);
 		}
+		this.progressing = false;
 	}
 
 	// onload event occurred in img tag
