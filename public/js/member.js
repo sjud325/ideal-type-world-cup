@@ -109,7 +109,7 @@ class Member {
 			const body = { name: target.value.trim(), gender };
 			const response = await fetch('member', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json; charset=utf-8' },
 				body: JSON.stringify(body)
 			});
 			if (response.ok) {
@@ -126,7 +126,7 @@ class Member {
 			const body = { _id: target.getAttribute('data-id'), gender };
 			const response = await fetch('member', {
 				method: 'DELETE',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json; charset=utf-8' },
 				body: JSON.stringify(body)
 			});
 			if (response.ok) {

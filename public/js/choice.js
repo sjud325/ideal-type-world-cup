@@ -50,10 +50,10 @@ class Choice {
 
 		// handle click event of heart buttons to choose one
 		this.$heart1.addEventListener('click', (e) =>
-			this.handleHeartClick(e.target, this.res1._id, this.$star1, this.anim.star1)
+			this.handleHeartClick(this.$heart1, this.res1._id, this.$star1, this.anim.star1)
 		);
 		this.$heart2.addEventListener('click', (e) =>
-			this.handleHeartClick(e.target, this.res2._id, this.$star2, this.anim.star2)
+			this.handleHeartClick(this.$heart2, this.res2._id, this.$star2, this.anim.star2)
 		);
 
 		// handle mouse in and out event of refresh button
@@ -70,14 +70,14 @@ class Choice {
 			this.$loading.style.display = 'block';
 			this.$loading.style.transition = 'all ease-in-out 400ms';
 			await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
-			await this.animate(this.$loading, () => this.$loading.classList.remove('idle')); // wait for transition
+			await this.animate(this.$loading, 'idle'); // wait for transition
 			this.res1.indices = this.setRandomImages(this.res1.images, this.$img1, this.timeout['1']);
 			this.res2.indices = this.setRandomImages(this.res2.images, this.$img2, this.timeout['2']);
 		});
 
 		// handle click event of modal to hide
 		this.$modal.addEventListener('click', async (e) => {
-			await this.animate(this.$modal, () => this.$modal.classList.remove('show')); // wait for transition
+			await this.animate(this.$modal, 'show'); // wait for transition
 			this.$modal.style.display = 'none';
 		});
 	}
@@ -151,7 +151,7 @@ class Choice {
 			};
 			element.addEventListener('transitionend', listener); // add event listener first
 			await new Promise((resolve) => setTimeout(resolve, 10)); // wait for event added
-			transit(); // transition code here
+			element.classList.toggle(transit); // transition code here
 		});
 	}
 
@@ -182,7 +182,7 @@ class Choice {
 	async handleHeartClick(target, _id, container, animation) {
 		animation.play(); // play the star animation
 		container.style.opacity = 1; // show the star animation container
-		await this.animate(target, () => target.classList.add('selected')); // wait for transition
+		await this.animate(target, 'selected'); // wait for transition
 		target.style.display = 'none';
 		target.classList.remove('selected');
 		await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
@@ -190,7 +190,7 @@ class Choice {
 		const body = { _id };
 		const response = await fetch('choice/match', {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 'Content-Type': 'application/json; charset=utf-8' },
 			body: JSON.stringify(body)
 		});
 		if (response.ok) {
@@ -204,7 +204,7 @@ class Choice {
 				container.style.opacity = 0; // hide the star animation container
 				this.$name1.classList.remove('show');
 				this.$name2.classList.remove('show');
-				await this.animate(this.$loading, () => this.$loading.classList.remove('idle')); // wait for transition
+				await this.animate(this.$loading, 'idle'); // wait for transition
 				this.$loading.style.transition = 'all ease-in-out 400ms 1000ms';
 				target.style.display = 'block';
 				this.loadImages(); // start next round
@@ -262,7 +262,7 @@ class Choice {
 				this.$loading.classList.add('play'); // start transition
 			} else {
 				// if the user clicked refresh button
-				await this.animate(this.$loading, () => this.$loading.classList.add('play')); // wait for transition
+				await this.animate(this.$loading, 'play'); // wait for transition
 				this.$loading.style.display = 'none';
 				this.$loading.classList.replace('play', 'idle');
 			}

@@ -54,6 +54,9 @@ router.get('/', async (req, res) => {
 // get two members photo
 router.get('/match', async (req, res) => {
 	try {
+		if (req.session.object === undefined) {
+			return res.redirect(301, '/ideal-type-world-cup/');
+		}
 		const {
 			round,
 			members: { current, remain }
