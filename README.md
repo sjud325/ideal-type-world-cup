@@ -58,5 +58,9 @@ https://sjud325.asuscomm.com/ideal-type-world-cup/
   + 가로 1280px 이상은 위 UI, 가로 720px 이하는 아래 UI로 표시되도록 CSS media query 적용
   
   ![Mobile Choice 1](/capture6.gif)
+  
   ![Mobile Choice 2](/capture7.gif)
+  
   ![Mobile Winner](/capture8.gif)
+
+---------------------------------------
