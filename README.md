@@ -1,7 +1,7 @@
 # 구글 검색 이상형 월드컵
 
-## 1. 프로젝트 주소
-<a target="_blank" href="https://sjud325.asuscomm.com/ideal-type-world-cup/">https://sjud325.asuscomm.com/ideal-type-world-cup/</a>
+## 1. 테스트 링크
+https://sjud325.asuscomm.com/ideal-type-world-cup/
 
 ## 2. 사용한 모듈 (Node.js)
 * __Express__ : 웹 서버 구현을 위해 사용   
