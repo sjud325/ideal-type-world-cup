@@ -57,8 +57,8 @@ https://sjud325.asuscomm.com/ideal-type-world-cup/
   + 위 데스크탑 UI를 크기만 조절하여 모바일에 띄울 경우 가시성 대폭 하락
   + 가로 1280px 이상은 위 UI, 가로 720px 이하는 아래 UI로 표시되도록 CSS media query 적용
   
-  ![Mobile Choice 1](/capture6.gif)
-  
-  ![Mobile Choice 2](/capture7.gif)
-  
-  ![Mobile Winner](/capture8.gif)
+  <p float="left">
+    <img src="/capture6.gif" width="32%" />
+    <img src="/capture7.gif" width="32%" />
+    <img src="/capture8.gif" width="32%" />
+  </p>
