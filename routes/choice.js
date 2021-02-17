@@ -1,7 +1,6 @@
 // import external modules
 const axios = require('axios');
 const router = require('express').Router();
-const cheerio = require('cheerio');
 
 // import internal modules
 const logger = require('../utils/logger');

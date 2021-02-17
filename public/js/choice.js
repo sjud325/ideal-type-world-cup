@@ -128,7 +128,7 @@ class Choice {
 	}
 
 	async loadImages() {
-		const response = await fetch('choice/match'); // get two random members images
+		const response = await fetch('choice/match', { cache: 'no-cache' }); // get two random members images
 		if (response.ok) {
 			const json = await response.json();
 			this.timeout = { 1: [0, 0, 0, 0], 2: [0, 0, 0, 0] }; // image loading timeout handler
