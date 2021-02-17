@@ -73,7 +73,7 @@ class Choice {
 			this.anim.loading.play();
 			this.$loading.style.display = 'block';
 			this.$loading.style.transition = 'all ease-in-out 400ms';
-			await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
+			await new Promise((resolve) => setTimeout(resolve, 50)); // wait for changing style
 			await this.animate(this.$loading, 'idle'); // wait for transition
 			this.res1.indices = this.setRandomImages(this.res1.images, this.$img1, this.timeout['1']);
 			this.res2.indices = this.setRandomImages(this.res2.images, this.$img2, this.timeout['2']);
@@ -158,7 +158,7 @@ class Choice {
 				}
 			};
 			element.addEventListener('transitionend', listener); // add event listener first
-			await new Promise((resolve) => setTimeout(resolve, 10)); // wait for event added
+			await new Promise((resolve) => setTimeout(resolve, 50)); // wait for event added
 			element.classList.toggle(transit); // transition code here
 		});
 	}
@@ -183,7 +183,7 @@ class Choice {
 		const src = target.getAttribute('src');
 		this.$modalImage.setAttribute('src', src);
 		this.$modal.style.display = 'block';
-		await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
+		await new Promise((resolve) => setTimeout(resolve, 50)); // wait for changing style
 		this.$modal.classList.add('show');
 	}
 
@@ -197,7 +197,7 @@ class Choice {
 		await this.animate(target, 'selected'); // wait for transition
 		target.style.display = 'none';
 		target.classList.remove('selected');
-		await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
+		await new Promise((resolve) => setTimeout(resolve, 50)); // wait for changing style
 		// call the member selection api
 		const body = { _id };
 		const response = await fetch('choice/match', {
@@ -212,7 +212,7 @@ class Choice {
 				this.anim.loading.play();
 				this.$loading.style.display = 'block';
 				this.$loading.style.transition = 'all ease-in-out 400ms';
-				await new Promise((resolve) => setTimeout(resolve, 10)); // wait for changing style
+				await new Promise((resolve) => setTimeout(resolve, 50)); // wait for changing style
 				container.style.opacity = 0; // hide the star animation container
 				this.$name1.classList.remove('show');
 				this.$name2.classList.remove('show');
