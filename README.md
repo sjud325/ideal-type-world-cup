@@ -1,6 +1,6 @@
 # 구글 검색 이상형 월드컵
 
-## 1. 테스트 링크
+## 1. 결과물 주소
 https://sjud325.asuscomm.com/ideal-type-world-cup/
 
 ## 2. 사용한 모듈 (Node.js)
